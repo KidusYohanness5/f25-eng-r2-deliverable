@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -77,7 +78,7 @@ export default function EditSpeciesDialog({ species }: { species: Species }) {
         </DialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="spacey-4">
             <FormField
               control={form.control}
               name="scientific_name"
