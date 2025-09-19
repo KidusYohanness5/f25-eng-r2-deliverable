@@ -10,12 +10,16 @@ on the client-side to correctly match component state and props should the order
 React server components don't track state between rerenders, so leaving the uniquely identified components (e.g. SpeciesCard)
 can cause errors with matching props and state in child components if the list order changes.
 */
-import { Button } from "@/components/ui/button";
+
 import type { Database } from "@/lib/schema";
 import Image from "next/image";
+import EditSpeciesDialog from "./edit-species-dialog";
+import SpeciesDetailDialog from "./species-detail-dialog";
 type Species = Database["public"]["Tables"]["species"]["Row"];
 
-export default function SpeciesCard({ species }: { species: Species }) {
+export default function SpeciesCard({ species, sessionId }: { species: Species; sessionId: string }) {
+  console.log("species.author:", species.author, "sessionId:", sessionId);
+
   return (
     <div className="m-4 w-72 min-w-72 flex-none rounded border-2 p-3 shadow">
       {species.image && (
@@ -26,8 +30,13 @@ export default function SpeciesCard({ species }: { species: Species }) {
       <h3 className="mt-3 text-2xl font-semibold">{species.scientific_name}</h3>
       <h4 className="text-lg font-light italic">{species.common_name}</h4>
       <p>{species.description ? species.description.slice(0, 150).trim() + "..." : ""}</p>
+      <p className="text-xs text-gray-500">
+        author: {species.author ?? "null"} <br />
+        sessionId: {sessionId ?? "null"}
+      </p>
       {/* Replace the button with the detailed view dialog. */}
-      <Button className="mt-3 w-full">Learn More</Button>
+      <SpeciesDetailDialog species={species} />
+      {species.author === sessionId && <EditSpeciesDialog species={species} />}
     </div>
   );
 }

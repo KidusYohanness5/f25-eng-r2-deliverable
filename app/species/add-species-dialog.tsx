@@ -30,7 +30,7 @@ import { z } from "zod";
 const kingdoms = z.enum(["Animalia", "Plantae", "Fungi", "Protista", "Archaea", "Bacteria"]);
 
 // Use Zod to define the shape + requirements of a Species entry; used in form validation
-const speciesSchema = z.object({
+export const speciesSchema = z.object({
   scientific_name: z
     .string()
     .trim()
