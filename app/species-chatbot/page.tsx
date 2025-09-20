@@ -1,4 +1,4 @@
-/* eslint-disable */
+/*
 "use client";
 import { TypographyH2, TypographyP } from "@/components/ui/typography";
 import { useRef, useState } from "react";
@@ -37,9 +37,9 @@ return (
           </TypographyP>
         </div>
       </div>
-      {/* Chat UI, ChatBot to be implemented */}
+      {/* Chat UI, ChatBot to be implemented }
       <div className="mx-auto mt-6">
-        {/* Chat history */}
+        {/* Chat history }
         <div className="h-[400px] space-y-3 overflow-y-auto rounded-lg border border-border bg-muted p-4">
           {chatLog.length === 0 ? (
             <p className="text-sm text-muted-foreground">Start chatting about a species!</p>
@@ -59,7 +59,7 @@ return (
             ))
           )}
         </div>
-        {/* Textarea and submission */}
+        {/* Textarea and submission }
         <div className="mt-4 flex flex-col items-end">
           <textarea
             ref={textareaRef}
@@ -82,3 +82,5 @@ return (
     </>
   );
 }
+
+*/

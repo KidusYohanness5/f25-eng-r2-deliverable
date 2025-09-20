@@ -1,4 +1,4 @@
-/* eslint-disable */
+/*
 "use client";
 import { useRef, useEffect, useState  } from "react";
 import { select } from "d3-selection";
@@ -68,3 +68,5 @@ export default function AnimalSpeedGraph() {
     </div>
   );
 }
+
+*/

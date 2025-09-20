@@ -18,8 +18,6 @@ import SpeciesDetailDialog from "./species-detail-dialog";
 type Species = Database["public"]["Tables"]["species"]["Row"];
 
 export default function SpeciesCard({ species, sessionId }: { species: Species; sessionId: string }) {
-  console.log("species.author:", species.author, "sessionId:", sessionId);
-
   return (
     <div className="m-4 w-72 min-w-72 flex-none rounded border-2 p-3 shadow">
       {species.image && (

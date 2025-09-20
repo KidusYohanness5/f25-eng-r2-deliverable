@@ -1,4 +1,4 @@
-/* eslint-disable */
+/*
 import { Separator } from "@/components/ui/separator";
 import { TypographyH2 } from "@/components/ui/typography";
 import { createServerSupabaseClient } from "@/lib/server-utils";
@@ -24,7 +24,7 @@ export default async function SpeciesSpeedPage() {
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
         <TypographyH2>Species Speed</TypographyH2>
-        {/* You could add a button or dialog here if needed */}
+        {/* You could add a button or dialog here if needed }
       </div>
       <Separator className="my-4" />
       <section className="mb-8">
@@ -41,3 +41,5 @@ export default async function SpeciesSpeedPage() {
     </>
   );
 }
+
+*/
